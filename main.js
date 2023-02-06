@@ -5,8 +5,8 @@
 //helper function-> return <DOMelement>
 const showbox1 = document.querySelector('.showbox1');
 const showbox2 = document.querySelector('.showbox2');
-const showbox3 = document.querySelector('.showbox3');
 const showbox4 = document.querySelector('.showbox4');
+const showbox5 = document.querySelector('.showbox5');
 const container = document.querySelector('.container')
 const btnext = document.querySelector('#btnext');
 const btnno = document.querySelector('#btnno');
@@ -88,11 +88,15 @@ btnyes.addEventListener('click', () => {
     showbox4.classList.toggle('show')
 })
 btnno.addEventListener('click', () => {
+    flag++;
     showbox1.classList.add('hide')
     setTimeout(()=>{
         showbox2.classList.toggle('show')
-    },200)
+    },100)
     setTimeout(()=>{
         showbox2.classList.toggle('show')
-    },300)
+    },200)
+    if(flag>4){
+        showbox5.classList.add('show')
+    }
 })
