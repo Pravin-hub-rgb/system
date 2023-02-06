@@ -66,7 +66,6 @@ class Progress {
     }
 }
 
-
 let pb = new Progress(15, 0, 100, { parent: ".progress" });
 
 //arg1 -> step length
@@ -83,20 +82,26 @@ setTimeout(() => {
 }, 4000)
 btnext.addEventListener('click', () => {
     showbox2.classList.toggle('show')
+    showbox1.classList.toggle('show')
 })
 btnyes.addEventListener('click', () => {
+    showbox2.classList.toggle('show')
     showbox4.classList.toggle('show')
+    showbox4.style.height = 'auto';
 })
 btnno.addEventListener('click', () => {
     flag++;
-    showbox1.classList.add('hide')
-    setTimeout(()=>{
+    showbox1.classList.add('hide');
+    setTimeout(() => {
         showbox2.classList.toggle('show')
-    },100)
-    setTimeout(()=>{
+    }, 100)
+    setTimeout(() => {
         showbox2.classList.toggle('show')
-    },200)
-    if(flag>4){
-        showbox5.classList.add('show')
+    }, 200)
+    if (flag > 4) {
+        showbox2.classList.add('hide')
+        setTimeout(() => {
+            showbox5.classList.add('show')
+        }, 300)
     }
 })
